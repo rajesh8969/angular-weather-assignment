@@ -1,0 +1,19 @@
+@import '../../app';
+
+.header {
+  @include flex-content;
+  background: $blueBackground;
+  width: $width100vw;
+  padding: 3rem;
+  border-radius: 0 0 75px 75px;
+  box-shadow: 0px 8px 11px 4px #ccc;
+  z-index: 2;
+  position: relative;
+
+  h1 {
+    font-size: 4em;
+    font-weight: 600;
+    text-align: $centerText;
+    color: #ffeeef;
+  }
+}

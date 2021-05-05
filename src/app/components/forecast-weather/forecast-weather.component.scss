@@ -1,0 +1,39 @@
+@import '../../app';
+
+.forecast-weather {
+  display: $displayFlex;
+  flex-direction: $flexColumn;
+
+  &__info {
+    @include flex-content;
+    flex-direction: $flexColumn;
+    margin: 1rem 0;
+
+    .switcher {
+      @include flex-content;
+      margin-bottom: 1rem;
+
+      @include celsius-fahrenheit;
+    }
+  }
+
+  &__list {
+    display: $displayFlex;
+    justify-content: space-evenly;
+  }
+
+  &__result {
+    display: $displayFlex;
+    flex-direction: $flexColumn;
+    animation: animate-zoom 0.5s;
+
+    @keyframes animate-zoom {
+      0% { transform: scale(1) }
+      50% { transform: scale(0.5) }
+      75% { transform: scale(1.1) }
+      100% { transform: scale(1) }
+    }
+
+    img { width: 110px }
+  }
+}

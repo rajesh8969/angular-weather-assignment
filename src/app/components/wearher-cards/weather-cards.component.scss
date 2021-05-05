@@ -1,0 +1,57 @@
+@import '../../app';
+
+.weather-cards {
+  display: $displayFlex;
+  flex-wrap: $flexWrap;
+  width: $width100vw;
+
+  @media (max-width: 939px) {
+    display: $displayFlex;
+    justify-content: center;
+  }
+
+  h1 { font-size: 1.5em }
+
+  &__body {
+    border: 2px solid #ccc;
+    border-radius: 35px;
+    padding: 2rem;
+    margin: 1.1rem 1.1rem 0 1.05rem;
+
+    @include cards-animation;
+  }
+
+  &__info {
+    @include flex-content;
+    flex-direction: $flexColumn;
+
+    div {
+      @include flex-content;
+
+      @include celsius-fahrenheit;
+    }
+  }
+
+  &__result {
+    display: $displayFlex;
+    flex-direction: row;
+
+    div { display: $displayFlex }
+
+    h1 {
+      font-size: 2em;
+      margin-top: 2rem;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .more-info {
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+  }
+}
